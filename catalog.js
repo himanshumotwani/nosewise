@@ -1,4 +1,4 @@
-/* Nosewise catalog — 25 curated picks.
+/* Nosewise catalog — 27 curated picks.
    Tags drive the quiz scoring and the browse filters.
    Tiers are relative only. No prices anywhere on the site. */
 const PERFUMES = [
@@ -55,6 +55,10 @@ const PERFUMES = [
     desc: "Bright citrus and mint over fig and amberwood — a fresh coastal extrait." },
   { id: "tobacco-vanille", name: "Tom Ford Tobacco Vanille", who: "unisex", family: "tobacco", occasion: "evenings", intensity: "bold", tier: "premium",
     desc: "Tobacco leaf, vanilla, and cocoa — warm, rich, and unmistakable." },
+  { id: "megamare", name: "Orto Parisi Megamare", who: "unisex", family: "fresh", occasion: "everyday", intensity: "bold", tier: "premium",
+    desc: "Salty seaweed and driftwood over musk — a bold, raw marine that smells like the open sea." },
+  { id: "black-afgano", name: "Nasomatto Black Afgano Extrait de Parfum", who: "unisex", family: "tobacco", occasion: "evenings", intensity: "bold", tier: "premium",
+    desc: "Dark hashish, oud, and incense over tobacco and coffee — a bold, smoky extrait for nights." },
 ];
 
 /* Bottle photos: optimized WebP versions in images-opt/ (originals kept in
@@ -85,6 +89,8 @@ const PHOTOS = {
   "dynasty": "images-opt/dynasty.webp",
   "rare-reef": "images-opt/rare-reef.webp",
   "tobacco-vanille": "images-opt/tobacco-vanille.webp",
+  "megamare": "images-opt/megamare.webp",
+  "black-afgano": "images-opt/black-afgano.webp",
 };
 
 /* Reference-perfume lookup: well-known perfume -> scent family.
@@ -103,6 +109,7 @@ const REFERENCE_FAMILIES = {
   "bright crystal": "floral", "shaghaf oud": "woody", "la yuqawam": "leather",
   "le sel d'issey": "woody", "liquid brun": "sweet", "rare reef": "fresh",
   "dynasty": "warm", "mykonos inception": "fresh", "mykonos slow living": "floral",
+  "orto parisi megamare": "fresh", "nasomatto black afgano": "tobacco",
   "spicebomb": "warm", "sauvage elixir": "warm", "terre d'hermes": "woody",
 };
 

@@ -43,6 +43,43 @@ function noteLabel(key) {
   return found ? found.label : key;
 }
 
+// Frequency of each note key: in how many perfumes it appears.
+const NOTE_FREQ = (() => {
+  const freq = new Map();
+  for (const p of PERFUMES) {
+    for (const k of perfumeNoteKeys(p)) freq.set(k, (freq.get(k) || 0) + 1);
+  }
+  return freq;
+})();
+
+const INITIAL_VISIBLE_COUNT = 18; // starter chips, most common notes first
+const REVEAL_BATCH = 12;          // new chips revealed per selection
+
+// Starter set: the most common notes across the catalog.
+function initialVisibleNotes() {
+  return [...NOTE_FREQ.entries()]
+    .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
+    .slice(0, INITIAL_VISIBLE_COUNT)
+    .map(([k]) => k);
+}
+
+// Notes related to `key`: notes that share a perfume with it, best first
+// (most shared perfumes, then most common overall), excluding `shown`.
+function relatedNotes(key, shown) {
+  const scored = new Map();
+  for (const p of PERFUMES) {
+    const keys = perfumeNoteKeys(p);
+    if (!keys.has(key)) continue;
+    for (const k of keys) {
+      if (k !== key && !shown.has(k)) scored.set(k, (scored.get(k) || 0) + 1);
+    }
+  }
+  return [...scored.entries()]
+    .sort((a, b) => (b[1] - a[1]) || ((NOTE_FREQ.get(b[0]) || 0) - (NOTE_FREQ.get(a[0]) || 0)) || a[0].localeCompare(b[0]))
+    .slice(0, REVEAL_BATCH)
+    .map(([k]) => k);
+}
+
 function resolveRefFamily(input) {
   if (!input) return null;
   const q = input.toLowerCase().trim();
@@ -289,8 +326,19 @@ if (typeof document !== "undefined") {
     } else if (step === "notes") {
       const hint = document.createElement("p");
       hint.className = "hint";
-      hint.textContent = "Optional. A note can't be in both lists — picking it in one removes it from the other.";
+      hint.textContent = "Optional. Start with the most common notes — picking one reveals notes often found with it. A note can't be in both lists.";
       box.appendChild(hint);
+      const counter = document.createElement("p");
+      counter.className = "hint";
+      box.appendChild(counter);
+      // Visible chips, in reveal order. Selected notes are always visible,
+      // so coming back to this step never hides a pick.
+      const visible = [];
+      const visibleSet = new Set();
+      const show = (key) => { if (!visibleSet.has(key)) { visibleSet.add(key); visible.push(key); } };
+      for (const k of initialVisibleNotes()) show(k);
+      for (const k of [...answers.likedNotes, ...answers.dislikedNotes]) show(k);
+      const updateCounter = () => { counter.textContent = `Showing ${visible.length} of ${ALL_NOTES.length} notes.`; };
       // One button per note in each group; both buttons for a note stay in
       // sync so the two lists can never contradict each other.
       const btns = new Map();
@@ -302,6 +350,37 @@ if (typeof document !== "undefined") {
         pair.avoid.classList.toggle("avoid-selected", answers.dislikedNotes.includes(key));
         pair.avoid.classList.toggle("dim", answers.likedNotes.includes(key));
       };
+      const rows = {};
+      const addChip = (n, key, other, row) => {
+        const b = document.createElement("button");
+        b.className = "chip";
+        b.textContent = n.label;
+        b.onclick = () => {
+          const i = answers[key].indexOf(n.key);
+          if (i >= 0) {
+            answers[key].splice(i, 1);
+          } else {
+            answers[key].push(n.key);
+            const j = answers[other].indexOf(n.key);
+            if (j >= 0) answers[other].splice(j, 1);
+            // Reveal notes often found with the newly picked note.
+            for (const k of relatedNotes(n.key, visibleSet)) {
+              show(k);
+              const nn = ALL_NOTES.find((x) => x.key === k);
+              if (nn) {
+                addChip(nn, "likedNotes", "dislikedNotes", rows.love);
+                addChip(nn, "dislikedNotes", "likedNotes", rows.avoid);
+                paint(k);
+              }
+            }
+            updateCounter();
+          }
+          paint(n.key);
+        };
+        if (!btns.has(n.key)) btns.set(n.key, {});
+        btns.get(n.key)[key === "likedNotes" ? "love" : "avoid"] = b;
+        row.appendChild(b);
+      };
       const group = (label, key, other) => {
         const g = document.createElement("div");
         g.className = "note-group";
@@ -310,30 +389,36 @@ if (typeof document !== "undefined") {
         h.textContent = label;
         const row = document.createElement("div");
         row.className = "chips";
-        for (const n of ALL_NOTES) {
-          const b = document.createElement("button");
-          b.className = "chip";
-          b.textContent = n.label;
-          b.onclick = () => {
-            const i = answers[key].indexOf(n.key);
-            if (i >= 0) answers[key].splice(i, 1);
-            else {
-              answers[key].push(n.key);
-              const j = answers[other].indexOf(n.key);
-              if (j >= 0) answers[other].splice(j, 1);
-            }
-            paint(n.key);
-          };
-          if (!btns.has(n.key)) btns.set(n.key, {});
-          btns.get(n.key)[key === "likedNotes" ? "love" : "avoid"] = b;
-          row.appendChild(b);
-        }
+        rows[key === "likedNotes" ? "love" : "avoid"] = row;
         g.append(h, row);
         return g;
       };
       box.appendChild(group("Notes you love", "likedNotes", "dislikedNotes"));
       box.appendChild(group("Notes to avoid", "dislikedNotes", "likedNotes"));
-      for (const n of ALL_NOTES) paint(n.key);
+      for (const k of visible) {
+        const n = ALL_NOTES.find((x) => x.key === k);
+        if (!n) continue;
+        addChip(n, "likedNotes", "dislikedNotes", rows.love);
+        addChip(n, "dislikedNotes", "likedNotes", rows.avoid);
+        paint(k);
+      }
+      updateCounter();
+      const showAll = document.createElement("button");
+      showAll.className = "text-button";
+      showAll.textContent = "Show all notes";
+      showAll.onclick = () => {
+        for (const n of ALL_NOTES) {
+          if (!visibleSet.has(n.key)) {
+            show(n.key);
+            addChip(n, "likedNotes", "dislikedNotes", rows.love);
+            addChip(n, "dislikedNotes", "likedNotes", rows.avoid);
+            paint(n.key);
+          }
+        }
+        updateCounter();
+        showAll.remove();
+      };
+      box.appendChild(showAll);
       const cont = document.createElement("button");
       cont.className = "primary";
       cont.textContent = "See my matches";
@@ -473,5 +558,5 @@ if (typeof document !== "undefined") {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { resolveRefFamily, resolveRefPerfume, scorePerfume, getResults, whyLines, tradeoffLine, normNote, perfumeNoteKeys, ALL_NOTES, noteLabel };
+  module.exports = { resolveRefFamily, resolveRefPerfume, scorePerfume, getResults, whyLines, tradeoffLine, normNote, perfumeNoteKeys, ALL_NOTES, noteLabel, NOTE_FREQ, initialVisibleNotes, relatedNotes };
 }

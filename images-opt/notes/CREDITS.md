@@ -1,0 +1,129 @@
+# Note thumbnail photo credits
+
+Tiny thumbnails on the Find Your Scent note chips. All photos are freely
+licensed (Wikimedia Commons). Notes without a photo use a neutral tile.
+
+- Agarwood (Oud) — “File:Oud Wood Supreme Quality.JPG” by Miansari66 (CC0) — https://commons.wikimedia.org/wiki/File%3AOud_Wood_Supreme_Quality.JPG
+- Almond — “File:Almonds - in shell, shell cracked open, shelled, blanched.jpg” by Ivar Leidus (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AAlmonds_-_in_shell%2C_shell_cracked_open%2C_shelled%2C_blanched.jpg
+- Amber — “File:Amber Bernstein many stones.jpg” by uploaded with permission from User Lanzi by Ra'ike on de.wikipedia (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AAmber_Bernstein_many_stones.jpg
+- Ambergris — “File:Ambergris, Skagway Museum.JPG” by Wmpearl (CC0) — https://commons.wikimedia.org/wiki/File%3AAmbergris%2C_Skagway_Museum.JPG
+- Ambrette — “File:Musk Mallow Hibiscus (7).jpg” by Md. T Mahtab (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AMusk_Mallow_Hibiscus_%287%29.jpg
+- Apple — “File:Red Apple.jpg” by Abhijit Tembhekar from Mumbai, India (CC BY 2.0) — https://commons.wikimedia.org/wiki/File%3ARed_Apple.jpg
+- Apricot — “File:Apricots.jpg” by Fir0002 (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AApricots.jpg
+- Artemisia — “File:2020 year. Herbarium. Artemisia vulgaris. img-020.jpg” by Dmitry Makeev (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3A2020_year._Herbarium._Artemisia_vulgaris._img-020.jpg
+- Basil — “File:Basil leaves.jpg” by Paul Goyette (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File%3ABasil_leaves.jpg
+- Benzoin — “File:Kemenyan resin benzoin resin.JPG” by Midori (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AKemenyan_resin_benzoin_resin.JPG
+- Bergamot — “File:Bergamot - Sour Orange - January 2013.jpg” by Leslie Seaton from Seattle, WA, USA (CC BY 2.0) — https://commons.wikimedia.org/wiki/File%3ABergamot_-_Sour_Orange_-_January_2013.jpg
+- Birch — “File:Birch bark box and pot in Tuntorp 3.jpg” by W.carter (CC BY 4.0) — https://commons.wikimedia.org/wiki/File%3ABirch_bark_box_and_pot_in_Tuntorp_3.jpg
+- Black Currant — “File:Blackcurrant in basket 2021 G1.jpg” by George Chernilevsky (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ABlackcurrant_in_basket_2021_G1.jpg
+- Black Tea — “File:Darjeeling, India, Darjeeling tea, Black tea.jpg” by Vyacheslav Argenberg (CC BY 4.0) — https://commons.wikimedia.org/wiki/File%3ADarjeeling%2C_India%2C_Darjeeling_tea%2C_Black_tea.jpg
+- Bourbon Vanilla — “File:Young vanilla pods.jpg” by ILikeMangos999 (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AYoung_vanilla_pods.jpg
+- Bulgarian Rose — “File:Comestible rose in the Laquenexy orchard garden, Moselle, France (01).jpg” by M0tty (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AComestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg
+- Cacao — “File:Cacao in Jar.jpg” by OXpatR (CC0) — https://commons.wikimedia.org/wiki/File%3ACacao_in_Jar.jpg
+- Cacao Pod — “File:Theobroma cacao MHNT.BOT.2004.0.204.jpg” by Roger Culos (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ATheobroma_cacao_MHNT.BOT.2004.0.204.jpg
+- Cannabis — “File:Cannabis sativa plant (4).JPG” by Chmee2 (CC BY 3.0) — https://commons.wikimedia.org/wiki/File%3ACannabis_sativa_plant_%284%29.JPG
+- Cardamom — “File:Cardamom pods - Green BNC.jpg” by Prathyush Thomas (GFDL 1.2) — https://commons.wikimedia.org/wiki/File%3ACardamom_pods_-_Green_BNC.jpg
+- Cashmere Wood — “File:Orange texture made of a fishing net on a wooden board at golden hour.jpg” by Basile Morin (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AOrange_texture_made_of_a_fishing_net_on_a_wooden_board_at_golden_hour.jpg
+- Cedar — “File:Cedrus wood 1.jpg” by No machine-readable author provided. Brodo assumed (based on copyright claims). (CC BY 3.0) — https://commons.wikimedia.org/wiki/File%3ACedrus_wood_1.jpg
+- Cinnamon — “File:Traditional preparation of cinnamon bark in Balapitiya, Sri Lanka, 20260207 0852 9188.jpg” by Jakub Hałun (CC BY 4.0) — https://commons.wikimedia.org/wiki/File%3ATraditional_preparation_of_cinnamon_bark_in_Balapitiya%2C_Sri_Lanka%2C_20260207_0852_9188.jpg
+- Citron — “File:Ripe fruit of Diamante citron (Citrus medica cv. Diamante).jpg” by Shantham11 (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ARipe_fruit_of_Diamante_citron_%28Citrus_medica_cv._Diamante%29.jpg
+- Clary Sage — “File:Naturesage Clary Sage Seed Oil Bloom.jpg” by Naturesage (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ANaturesage_Clary_Sage_Seed_Oil_Bloom.jpg
+- Coffee — “File:Roasted coffee beans.jpg” by MarkSweep (Public domain) — https://commons.wikimedia.org/wiki/File%3ARoasted_coffee_beans.jpg
+- Coriander — “File:Coriander Seeds.jpg” by Sanjay Acharya (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ACoriander_Seeds.jpg
+- Dates — “File:Dates fruit.jpg” by Hajia Hijjah (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ADates_fruit.jpg
+- Davana — “File:48 Davana.jpg” by Ketaki Modak (CC0) — https://commons.wikimedia.org/wiki/File%3A48_Davana.jpg
+- Dried Fruits — “File:Zanthoxylum rhetsa - Dried fruits and seeds -MHNT.jpg” by Didier Descouens (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AZanthoxylum_rhetsa_-_Dried_fruits_and_seeds_-MHNT.jpg
+- Driftwood — “File:Driftwood in Israel.jpg” by Davidbena (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ADriftwood_in_Israel.jpg
+- Elemi — “File:Deutsches Apothekenmuseum - Elemi.jpg” by Zinnmann (CC BY 4.0) — https://commons.wikimedia.org/wiki/File%3ADeutsches_Apothekenmuseum_-_Elemi.jpg
+- Fig — “File:Fig (Ficus carica) fruit halved.jpg” by Ivar Leidus (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AFig_%28Ficus_carica%29_fruit_halved.jpg
+- Fir Resin — “File:Resin drop - Grand Fir - Flickr - S. Rae.jpg” by S. Rae from Scotland, UK (CC BY 2.0) — https://commons.wikimedia.org/wiki/File%3AResin_drop_-_Grand_Fir_-_Flickr_-_S._Rae.jpg
+- Fruity Notes — “File:Mixed fruits sold in a local community in Cameroon.jpg” by Adesolive (CC0) — https://commons.wikimedia.org/wiki/File%3AMixed_fruits_sold_in_a_local_community_in_Cameroon.jpg
+- Galbanum — “File:Galbanum1.JPG” by Maša Sinreih in Valentina Vivod (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AGalbanum1.JPG
+- Ginger — “File:Ginger Plant vs.jpg” by Venkatx5 (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AGinger_Plant_vs.jpg
+- Gourmand Accord — “File:Desserts in Las Vegas.jpg” by Dion Hinchcliffe (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File%3ADesserts_in_Las_Vegas.jpg
+- Grapefruit — “File:Citrus paradisi (Grapefruit, pink) white bg.jpg” by Citrus_paradisi_(Grapefruit,_pink).jpg: א (Aleph)
+derivative work: — raeky (CC BY-SA 2.5) — https://commons.wikimedia.org/wiki/File%3ACitrus_paradisi_%28Grapefruit%2C_pink%29_white_bg.jpg
+- Green Notes — “File:Two holes and green leaves on the bark of a tree trunk in the forest in Luang Prabang Laos.jpg” by Basile Morin (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ATwo_holes_and_green_leaves_on_the_bark_of_a_tree_trunk_in_the_forest_in_Luang_Prabang_Laos.jpg
+- Guaiac Wood — “File:Guaiacum officinale MHNT.BOT.2009.13.13.jpg” by Roger Culos (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AGuaiacum_officinale_MHNT.BOT.2009.13.13.jpg
+- Gurjan balsam — “File:Dipterocarpus retusus - Köhler–s Medizinal-Pflanzen-054.jpg” by Franz Eugen Köhler, Köhler's Medizinal-Pflanzen (Public domain) — https://commons.wikimedia.org/wiki/File%3ADipterocarpus_retusus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-054.jpg
+- Haitian Vetiver — “File:Vetiveria zizanoides dsc07810.jpg” by Copyright © 2005 David Monniaux (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AVetiveria_zizanoides_dsc07810.jpg
+- Heliotrope — “File:Close-up of heliotrope flower (Heliotropium arborescens), Jardim da Fundação Calouste Gulbenkian, Lisbon, Portugal julesvernex2.jpg” by Jules Verne Times Two (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AClose-up_of_heliotrope_flower_%28Heliotropium_arborescens%29%2C_Jardim_da_Funda%C3%A7%C3%A3o_Calouste_Gulbenkian%2C_Lisbon%2C_Portugal_julesvernex2.jpg
+- Ice — “File:Ice cubes openphoto.jpg” by Darren Hester (CC BY-SA 2.5) — https://commons.wikimedia.org/wiki/File%3AIce_cubes_openphoto.jpg
+- Incense — “File:Incense in Vietnam.jpg” by Trantuanviet (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AIncense_in_Vietnam.jpg
+- Indonesian Patchouli Leaf — “File:Pogostemon cablin 001.jpg” by No machine-readable author provided. Valérie75 assumed (based on copyright claims). (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3APogostemon_cablin_001.jpg
+- Italian Lemon — “File:Lemon tree full of Lemons, Burj Bhalaike.jpg” by Kuldeepburjbhalaike (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ALemon_tree_full_of_Lemons%2C_Burj_Bhalaike.jpg
+- Jasmine — “File:Jasmine Flower image.jpg” by Kanimozhi Vennila (CC0) — https://commons.wikimedia.org/wiki/File%3AJasmine_Flower_image.jpg
+- Jasmine Sambac — “File:Jasminum sambac is a species of Jasmine native to tropical asia.jpg” by Sathiyaraj Durai (CC0) — https://commons.wikimedia.org/wiki/File%3AJasminum_sambac_is_a_species_of_Jasmine_native_to_tropical_asia.jpg
+- Juniper — “File:Juniperi pseudo-fructus 196159.jpg” by Rillke (CC BY-SA 3.0 de) — https://commons.wikimedia.org/wiki/File%3AJuniperi_pseudo-fructus_196159.jpg
+- Labdanum — “File:Cistus (zonneroosjesfamilie.) 14-06-2020 (d.j.b.) 01.jpg” by Dominicus Johannes Bergsma (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ACistus_%28zonneroosjesfamilie.%29_14-06-2020_%28d.j.b.%29_01.jpg
+- Lavender — “File:Single lavender flower02.jpg” by User:Fir0002 (GFDL 1.2) — https://commons.wikimedia.org/wiki/File%3ASingle_lavender_flower02.jpg
+- Leather — “File:Cebu Leather and rattan crafts.jpg” by QueenCityCebu (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ACebu_Leather_and_rattan_crafts.jpg
+- Lemon — “File:Lemon tree full of Lemons, Burj Bhalaike.jpg” by Kuldeepburjbhalaike (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ALemon_tree_full_of_Lemons%2C_Burj_Bhalaike.jpg
+- Lily — “File:Formosa lily, Nagai Park, Osaka.jpg” by Laitche (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AFormosa_lily%2C_Nagai_Park%2C_Osaka.jpg
+- Lily of the Valley — “File:Lelietje-van-dalen of meiklokje (Convallaria majalis). 14-05-2021 (actm.) 01.jpg” by Agnes Monkelbaan (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ALelietje-van-dalen_of_meiklokje_%28Convallaria_majalis%29._14-05-2021_%28actm.%29_01.jpg
+- Lime — “File:Backyard limes.jpg” by Wtstoffs at en.wikipedia (Public domain) — https://commons.wikimedia.org/wiki/File%3ABackyard_limes.jpg
+- Lotus — “File:Lotus flower (978659).jpg” by Hong Zhang (jennyzhh2008) (CC0) — https://commons.wikimedia.org/wiki/File%3ALotus_flower_%28978659%29.jpg
+- Magnolia — “File:Magnolia × soulangeana blossom.jpg” by James F. (CC BY 1.0) — https://commons.wikimedia.org/wiki/File%3AMagnolia_%C3%97_soulangeana_blossom.jpg
+- Mahogany — “File:Mahogany wood and 2 close lookalikes, Kew Gardens.jpg” by Ian Alexander (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AMahogany_wood_and_2_close_lookalikes%2C_Kew_Gardens.jpg
+- Mandarin — “File:Mandarin Oranges (Citrus Reticulata).jpg” by Joe Ravi (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AMandarin_Oranges_%28Citrus_Reticulata%29.jpg
+- Mandarin Orange — “File:Mandarin Oranges (Citrus Reticulata).jpg” by Joe Ravi (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AMandarin_Oranges_%28Citrus_Reticulata%29.jpg
+- Mimosa — “File:Acacia dealbata (37540484220).jpg” by Donald Hobern from Copenhagen, Denmark (CC BY 2.0) — https://commons.wikimedia.org/wiki/File%3AAcacia_dealbata_%2837540484220%29.jpg
+- Mint — “File:Mint leaves (Mentha spicata).jpg” by Commonists (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AMint_leaves_%28Mentha_spicata%29.jpg
+- Moss — “File:Dead Trunk with Moss in Fallätsche.jpg” by Daniel Kraft (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ADead_Trunk_with_Moss_in_Fall%C3%A4tsche.jpg
+- Musk — “File:Musk mallow (Malva moschata) - seed pods - geograph.org.uk - 5479686.jpg” by Evelyn Simak (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File%3AMusk_mallow_%28Malva_moschata%29_-_seed_pods_-_geograph.org.uk_-_5479686.jpg
+- Myrrh — “File:Commiphora-myrrha-resin-myrrh.jpg” by derivative work: Photohound (talk)
+IncenseWikiVers.jpg: Transferred from en.wikipedia to Commons by Trengarasu using CommonsHelper.
+The original uploader was Sjschen at English Wikipedia. (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ACommiphora-myrrha-resin-myrrh.jpg
+- Neroli — “File:Orange Blossom.JPG” by Alexander Hardin (CC BY 3.0) — https://commons.wikimedia.org/wiki/File%3AOrange_Blossom.JPG
+- Nutmeg — “File:Nutmeg ready.jpg” by Terrence Coombes (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ANutmeg_ready.jpg
+- Oak Moss — “File:Oakmoss at Myrstigen 3.jpg” by W.carter (CC0) — https://commons.wikimedia.org/wiki/File%3AOakmoss_at_Myrstigen_3.jpg
+- Olibanum — “File:Frankincense.JPG” by No machine-readable author provided. Gaius Cornelius assumed (based on copyright claims). (Public domain) — https://commons.wikimedia.org/wiki/File%3AFrankincense.JPG
+- Opoponax — “File:Opoponax1.JPG” by Maša Sinreih in Valentina Vivod (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AOpoponax1.JPG
+- Orange — “File:Oranges - whole-halved-segment.jpg” by Ivar Leidus (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AOranges_-_whole-halved-segment.jpg
+- Orange Blossom — “File:Orange Blossom.JPG” by Alexander Hardin (CC BY 3.0) — https://commons.wikimedia.org/wiki/File%3AOrange_Blossom.JPG
+- Orchid — “File:Orchid at USBG (18160).jpg” by Rhododendrites (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AOrchid_at_USBG_%2818160%29.jpg
+- Orris — “File:Verschiedenfarbige Schwertlilie (Iris versicolor)-20200603-RM-100257.jpg” by Ermell (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AVerschiedenfarbige_Schwertlilie_%28Iris_versicolor%29-20200603-RM-100257.jpg
+- Orris Root — “File:Iris pseudacorus rhizome and roots IMG 9222s.jpg” by JonRichfield (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AIris_pseudacorus_rhizome_and_roots_IMG_9222s.jpg
+- Papaya — “File:Papaya - longitudinal section close-up view.jpg” by Ivar Leidus (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3APapaya_-_longitudinal_section_close-up_view.jpg
+- Patchouli — “File:Pogostemon cablin 001.jpg” by No machine-readable author provided. Valérie75 assumed (based on copyright claims). (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3APogostemon_cablin_001.jpg
+- Peony — “File:Tree peony flower 2021 G2.jpg” by George Chernilevsky (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ATree_peony_flower_2021_G2.jpg
+- Pineapple — “File:Ananas comosus, Dole Pineapple Plantation, Oahu, Hawaii, USA2.jpg” by Diego Delso (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AAnanas_comosus%2C_Dole_Pineapple_Plantation%2C_Oahu%2C_Hawaii%2C_USA2.jpg
+- Pink Pepper — “File:Pink Peppercorns - Schinus molle.jpg” by Netherzone (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3APink_Peppercorns_-_Schinus_molle.jpg
+- Plum — “File:Red-Plums.jpg” by Evan-Amos (CC0) — https://commons.wikimedia.org/wiki/File%3ARed-Plums.jpg
+- Pomegranate — “File:Pomegranate fruit - whole and piece with arils.jpg” by Ivar Leidus (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3APomegranate_fruit_-_whole_and_piece_with_arils.jpg
+- Praline — “File:013 Austrian chocolates in Vienna - assorted fancy chocolate pralines.jpg” by Marek Ślusarczyk (Tupungato) Photo portfolio (CC BY 3.0) — https://commons.wikimedia.org/wiki/File%3A013_Austrian_chocolates_in_Vienna_-_assorted_fancy_chocolate_pralines.jpg
+- Raspberry — “File:Raspberries (Rubus Idaeus).jpg” by Juhanson (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ARaspberries_%28Rubus_Idaeus%29.jpg
+- Resins — “File:Resin on the trunk of a domestic plum tree.jpg” by Krigore (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AResin_on_the_trunk_of_a_domestic_plum_tree.jpg
+- Rooibos Tea — “File:Frisch aufgebrühter Rooibos.jpg” by soultea.de/André Helbig (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AFrisch_aufgebr%C3%BChter_Rooibos.jpg
+- Rose — “File:Comestible rose in the Laquenexy orchard garden, Moselle, France (01).jpg” by M0tty (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AComestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg
+- Saffron — “File:Iran saffron threads.jpg” by Rainer Zenz (Public domain) — https://commons.wikimedia.org/wiki/File%3AIran_saffron_threads.jpg
+- Sage — “File:20260614 Salvia officinalis 02.jpg” by Flocci Nivis (CC BY 4.0) — https://commons.wikimedia.org/wiki/File%3A20260614_Salvia_officinalis_02.jpg
+- Sandalwood — “File:Sandalwood and incense materials at Kurmi Market Kano.jpg” by Fatima Bukar (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ASandalwood_and_incense_materials_at_Kurmi_Market_Kano.jpg
+- Sea Salt — “File:Dead Sea salt formation (Aerial view, 2007).jpg” by Godot13 (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ADead_Sea_salt_formation_%28Aerial_view%2C_2007%29.jpg
+- Seaweed — “File:Harvesting seaweed in Jambiani.jpg” by Yann Macherez (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AHarvesting_seaweed_in_Jambiani.jpg
+- Sicilian Bergamot — “File:Bergamot - Sour Orange - January 2013.jpg” by Leslie Seaton from Seattle, WA, USA (CC BY 2.0) — https://commons.wikimedia.org/wiki/File%3ABergamot_-_Sour_Orange_-_January_2013.jpg
+- Spicy Notes — “File:Spices of Saúde flea market, São Paulo, Brazil.jpg” by Wilfredor (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ASpices_of_Sa%C3%BAde_flea_market%2C_S%C3%A3o_Paulo%2C_Brazil.jpg
+- Star Anise — “File:Dried Star Anise Fruit Seeds.jpg” by Sanjay Acharya (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ADried_Star_Anise_Fruit_Seeds.jpg
+- Suede — “File:Alcantara.jpg” by Fabrizio Marco Nannini (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AAlcantara.jpg
+- Sugar — “File:Würfelzucker -- 2018 -- 3564.jpg” by Dietmar Rabich (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AW%C3%BCrfelzucker_--_2018_--_3564.jpg
+- Tangerine — “File:Tangerine halves.jpg” by 多多123 (CC BY 4.0) — https://commons.wikimedia.org/wiki/File%3ATangerine_halves.jpg
+- Tea Rose — “File:Hybrid tea rose - Korlita.jpg” by MrPanyGoff (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AHybrid_tea_rose_-_Korlita.jpg
+- Thyme — “File:Thyme-Bundle.jpg” by Evan-Amos (CC0) — https://commons.wikimedia.org/wiki/File%3AThyme-Bundle.jpg
+- Tobacco — “File:Cuba - Sorting (grading) tobacco leaves.jpg” by Unknown author (Public domain) — https://commons.wikimedia.org/wiki/File%3ACuba_-_Sorting_%28grading%29_tobacco_leaves.jpg
+- Tobacco Blossom — “File:Tobacco flower 2.jpg” by Prasiagri (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ATobacco_flower_2.jpg
+- Tobacco Leaf — “File:Cuba - Sorting (grading) tobacco leaves.jpg” by Unknown author (Public domain) — https://commons.wikimedia.org/wiki/File%3ACuba_-_Sorting_%28grading%29_tobacco_leaves.jpg
+- Toffee — “File:Thorntonstoffee.jpg” by Stratford490 (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AThorntonstoffee.jpg
+- Tonka Bean — “File:Tonka Beans.jpg” by Mecredis / Fred Benenson (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ATonka_Beans.jpg
+- Tropical Fruits — “File:ARS tropical fruit no labels.jpg” by Penny Greb (Public domain) — https://commons.wikimedia.org/wiki/File%3AARS_tropical_fruit_no_labels.jpg
+- Tuberose — “File:Tuberose flower (1).jpg” by RonyChayanMondal (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ATuberose_flower_%281%29.jpg
+- Turkish Rose — “File:Comestible rose in the Laquenexy orchard garden, Moselle, France (01).jpg” by M0tty (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AComestible_rose_in_the_Laquenexy_orchard_garden%2C_Moselle%2C_France_%2801%29.jpg
+- Vanilla — “File:Young vanilla pods.jpg” by ILikeMangos999 (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AYoung_vanilla_pods.jpg
+- Vetiver — “File:Vetiveria zizanoides dsc07810.jpg” by Copyright © 2005 David Monniaux (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AVetiveria_zizanoides_dsc07810.jpg
+- Violet — “File:Violet colour flower image.jpg” by Tamilarasi Annadurai (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AViolet_colour_flower_image.jpg
+- Violet Leaf — “File:Wild Violet leaves (15853057688).jpg” by John Tann from Sydney, Australia (CC BY 2.0) — https://commons.wikimedia.org/wiki/File%3AWild_Violet_leaves_%2815853057688%29.jpg
+- White Flowers — “File:White flowers b.jpg” by Alvesgaspar (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AWhite_flowers_b.jpg
+- White Musk — “File:Musk Mallow Hibiscus (7).jpg” by Md. T Mahtab (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AMusk_Mallow_Hibiscus_%287%29.jpg
+- Woodsy Notes — “File:Spruce forest at Holma.jpg” by W.carter (CC0) — https://commons.wikimedia.org/wiki/File%3ASpruce_forest_at_Holma.jpg
+- Woody Notes — “File:Orange texture made of a fishing net on a wooden board at golden hour.jpg” by Basile Morin (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AOrange_texture_made_of_a_fishing_net_on_a_wooden_board_at_golden_hour.jpg
+- Ylang-Ylang — “File:Ylang ylang flowers -Cananga odorata.jpg” by Vinayaraj (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AYlang_ylang_flowers_-Cananga_odorata.jpg
+- Yuzu — “File:Yuzufruit.jpg” by Nagarazoku from TOKYO, Japan (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File%3AYuzufruit.jpg

@@ -176,6 +176,16 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 20px 80px; }
   color: var(--ink);
 }
 .chip.selected { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+/* Note-chip thumbnails: photo where one exists, neutral initial tile else */
+.chip.has-thumb { display: inline-flex; align-items: center; gap: 6px; padding-left: 6px; }
+.chip-thumb { width: 20px; height: 20px; border-radius: 50%; background-size: 220px 220px; flex: none; }
+.chip-tile {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--soft); color: var(--muted);
+  font-size: 11px; font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+}
 .count { color: var(--muted); font-size: 14px; }
 .grid { display: grid; gap: 20px; }
 .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }

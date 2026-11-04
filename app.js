@@ -588,7 +588,7 @@ if (typeof document !== "undefined") {
   }
 
   function tagRow(p) {
-    return `<div class="tags"><span>${WHO_LABELS[p.who]}</span><span>${FAMILY_LABELS[p.family]}</span><span>${OCCASION_LABELS[p.occasion]}</span><span>${INTENSITY_LABELS[p.intensity]}</span><span>${TIER_LABELS[p.tier]}</span></div>`;
+    return `<div class="tags"><span title="${CATEGORY_DEFS[p.category]}">${CATEGORY_LABELS[p.category]}</span><span>${WHO_LABELS[p.who]}</span><span>${FAMILY_LABELS[p.family]}</span><span>${OCCASION_LABELS[p.occasion]}</span><span>${INTENSITY_LABELS[p.intensity]}</span><span>${TIER_LABELS[p.tier]}</span></div>`;
   }
 
   function notesHTML(p) {
@@ -637,6 +637,7 @@ if (typeof document !== "undefined") {
     const grid = $("#browse-grid");
     const list = PERFUMES.filter((p) =>
       (f.who === "all" || p.who === f.who || (f.who !== "unisex" && p.who === "unisex")) &&
+      (f.category === "all" || p.category === f.category) &&
       (f.family === "all" || p.family === f.family) &&
       (f.occasion === "all" || p.occasion === f.occasion) &&
       (f.intensity === "all" || p.intensity === f.intensity) &&
@@ -652,7 +653,7 @@ if (typeof document !== "undefined") {
     }
   }
 
-  const browseFilters = { who: "all", family: "all", occasion: "all", intensity: "all", tier: "all" };
+  const browseFilters = { who: "all", category: "all", family: "all", occasion: "all", intensity: "all", tier: "all" };
 
   function chipGroup(label, key, options, labels) {
     const wrap = document.createElement("div");
@@ -664,6 +665,7 @@ if (typeof document !== "undefined") {
       const b = document.createElement("button");
       b.className = "chip" + (browseFilters[key] === opt ? " selected" : "");
       b.textContent = opt === "all" ? "All" : labels[opt];
+      if (key === "category" && opt !== "all") b.title = CATEGORY_DEFS[opt];
       b.onclick = () => { browseFilters[key] = opt; buildBrowseFilters(); renderBrowse(); };
       row.appendChild(b);
     }
@@ -674,6 +676,7 @@ if (typeof document !== "undefined") {
   function buildBrowseFilters() {
     const box = $("#browse-filters");
     box.innerHTML = "";
+    box.appendChild(chipGroup("Category", "category", ["all", ...Object.keys(CATEGORY_LABELS)], CATEGORY_LABELS));
     box.appendChild(chipGroup("Who", "who", ["all", "him", "her", "unisex"], WHO_LABELS));
     box.appendChild(chipGroup("Scent", "family", ["all", ...Object.keys(FAMILY_LABELS)], FAMILY_LABELS));
     box.appendChild(chipGroup("Occasion", "occasion", ["all", ...Object.keys(OCCASION_LABELS)], OCCASION_LABELS));

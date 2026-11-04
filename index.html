@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nosewise — Your nose knows. We just help it choose.</title>
-<meta name="description" content="Nosewise helps you find the right perfume with a short quiz or by browsing a curated shelf. Recommendations only — no prices, no stores.">
+<meta name="description" content="Nosewise helps you find the right perfume by answering a few questions, or by browsing a curated shelf. Recommendations only — no prices, no stores.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
   <a class="wordmark" href="#" data-nav="home">nosewise</a>
   <nav class="site-nav">
-    <button data-nav="quiz">Quiz</button>
+    <button data-nav="quiz">Find Your Scent</button>
     <button data-nav="browse">Browse</button>
   </nav>
 </header>
@@ -23,19 +23,19 @@
       <h1>Your nose knows.<br>We just help it choose.</h1>
       <p class="hero-sub">Answer six quick questions and get the right perfume from a curated shelf — or browse every pick yourself.</p>
       <div class="hero-actions">
-        <button class="primary large" data-nav="quiz">Take the quiz</button>
+        <button class="primary large" data-nav="quiz">Find Your Scent</button>
         <button class="secondary large" data-nav="browse">Browse all perfumes</button>
       </div>
       <p class="hero-note">27 curated picks · Recommendations only · No prices, no stores</p>
     </div>
     <div class="how">
       <div><h2>1 · Answer</h2><p>Six questions: who it's for, when you'll wear it, the scents you lean toward, a perfume you love or dislike, strength, and budget tier.</p></div>
-      <div><h2>2 · Match</h2><p>Every pick is tagged the same way. The quiz scores the shelf and ranks your best fits — with the reason shown for each one.</p></div>
+      <div><h2>2 · Match</h2><p>Every pick is tagged the same way. Your answers score the shelf and rank your best fits — with the reason shown for each one.</p></div>
       <div><h2>3 · Choose</h2><p>One best match, two alternatives. No black box, no sponsored order, no pressure.</p></div>
     </div>
   </section>
 
-  <!-- Quiz -->
+  <!-- Find Your Scent -->
   <section id="view-quiz" class="view" hidden>
     <div class="quiz-shell">
       <p id="quiz-progress" class="progress"></p>
@@ -52,7 +52,7 @@
       <p class="results-sub">Ranked from the shelf by your answers. The reason for each pick is shown below it.</p>
       <div id="results-list" class="results-list"></div>
       <div class="results-actions">
-        <button id="retake-quiz" class="secondary">Retake the quiz</button>
+        <button id="retake-quiz" class="secondary">Start over</button>
         <button id="browse-from-results" class="secondary">Browse all perfumes</button>
       </div>
     </div>

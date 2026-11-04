@@ -209,6 +209,13 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 20px 80px; }
   color: var(--muted);
 }
 
+/* Note pyramids on cards + the advanced like/dislike step */
+.notes { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+.notes span { color: var(--ink); font-weight: 600; }
+.note-group { margin-bottom: 24px; }
+.chip.avoid-selected { text-decoration: line-through; color: var(--muted); }
+.chip.dim { opacity: 0.4; }
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--line);

@@ -3,6 +3,46 @@
 
 const INTENSITY_LEVEL = { light: 0, noticeable: 1, bold: 2 };
 
+// Note matching: normalize so "Oak Moss" == "Oakmoss", "Lily-of-the-Valley"
+// == "Lily of the Valley", "Cedarwood" == "Cedar", "Tonka Bean" == "Tonka".
+function normNote(s) {
+  let k = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (k === "cedarwood") k = "cedar";
+  if (k === "tonkabean") k = "tonka";
+  return k;
+}
+
+function perfumeNoteKeys(p) {
+  const keys = new Set();
+  if (!p.notes) return keys;
+  for (const stage of ["top", "heart", "base"]) {
+    for (const n of (p.notes[stage] || [])) keys.add(normNote(n));
+  }
+  return keys;
+}
+
+// All distinct notes across the catalog, for the like/dislike step.
+// Display name = first-seen spelling; matching uses normNote.
+const ALL_NOTES = (() => {
+  const seen = new Map();
+  for (const p of PERFUMES) {
+    if (!p.notes) continue;
+    for (const stage of ["top", "heart", "base"]) {
+      for (const n of (p.notes[stage] || [])) {
+        const k = normNote(n);
+        if (!seen.has(k)) seen.set(k, n);
+      }
+    }
+  }
+  return [...seen.entries()].map(([key, label]) => ({ key, label }))
+    .sort((a, b) => a.label.localeCompare(b.label));
+})();
+
+function noteLabel(key) {
+  const found = ALL_NOTES.find((n) => n.key === key);
+  return found ? found.label : key;
+}
+
 function resolveRefFamily(input) {
   if (!input) return null;
   const q = input.toLowerCase().trim();
@@ -36,7 +76,14 @@ function scorePerfume(p, a) {
   let score = scent;
   if (p.occasion === a.occasion) score += 2;
   if (p.intensity === a.intensity) score += 1;
-  return { score, scent, scentFromRef };
+  // Notes (advanced step): +2 per loved note present, -4 per avoided note
+  // present. Avoided notes normally exclude the perfume outright (see
+  // getResults); the penalty only bites when exclusion would leave too few.
+  const keys = perfumeNoteKeys(p);
+  const likedMatched = (a.likedNotes || []).filter((k) => keys.has(k));
+  const dislikedMatched = (a.dislikedNotes || []).filter((k) => keys.has(k));
+  score += 2 * likedMatched.length - 4 * dislikedMatched.length;
+  return { score, scent, scentFromRef, likedMatched, dislikedMatched };
 }
 
 function getResults(a) {
@@ -55,6 +102,19 @@ function getResults(a) {
     const filtered = pool.filter((p) => p.family !== a.refFamily);
     if (filtered.length > 0) { pool = filtered; dislikeApplied = true; }
   }
+  // Notes (advanced step): avoided notes exclude a perfume, unless that
+  // would leave too few matches — then the penalty in scorePerfume applies
+  // instead and the results say so (notesRelaxed).
+  let notesRelaxed = false;
+  const applyNoteExclusion = (pl) => {
+    if (!a.dislikedNotes || !a.dislikedNotes.length) return { pool: pl, relaxed: false };
+    const filtered = pl.filter((p) => {
+      const keys = perfumeNoteKeys(p);
+      return !a.dislikedNotes.some((k) => keys.has(k));
+    });
+    return filtered.length >= 3 ? { pool: filtered, relaxed: false } : { pool: pl, relaxed: true };
+  };
+  ({ pool, relaxed: notesRelaxed } = applyNoteExclusion(pool));
   if (pool.length < 3) {
     // Fall back gracefully instead of showing an empty page.
     pool = PERFUMES.filter((p) => {
@@ -62,6 +122,7 @@ function getResults(a) {
       return whoOk;
     });
     dislikeApplied = false;
+    ({ pool, relaxed: notesRelaxed } = applyNoteExclusion(pool));
   }
   const scored = pool.map((p) => ({ p, ...scorePerfume(p, a) }));
   scored.sort((x, y) => {
@@ -71,12 +132,18 @@ function getResults(a) {
     if (dx !== dy) return dx - dy;
     return x.p.name.localeCompare(y.p.name);
   });
-  return { top: scored.slice(0, 3), dislikeApplied };
+  return { top: scored.slice(0, 3), dislikeApplied, notesRelaxed };
 }
 
 function whyLines(entry, a) {
   const { p, scentFromRef } = entry;
   const lines = [];
+  if (entry.likedMatched && entry.likedMatched.length) {
+    lines.push(`Matches notes you love: ${entry.likedMatched.map(noteLabel).join(", ")}`);
+  }
+  if (entry.dislikedMatched && entry.dislikedMatched.length) {
+    lines.push(`Contains ${entry.dislikedMatched.map(noteLabel).join(", ")} you wanted to avoid — closest match available`);
+  }
   if (scentFromRef && a.refName) {
     lines.push(`Shares the ${FAMILY_LABELS[p.family].toLowerCase()} character of ${a.refName}, which you love`);
   } else if (a.families.includes(p.family)) {
@@ -100,7 +167,7 @@ function tradeoffLine(p, a) {
 if (typeof document !== "undefined") {
   const $ = (s) => document.querySelector(s);
 
-  const QUIZ_STEPS = ["who", "occasion", "families", "reference", "intensity", "budget"];
+  const QUIZ_STEPS = ["who", "occasion", "families", "reference", "intensity", "budget", "notes"];
   const STEP_TITLES = {
     who: "Who's it for?",
     occasion: "When will you mostly wear it?",
@@ -108,8 +175,9 @@ if (typeof document !== "undefined") {
     reference: "Is there a perfume you already love — or one you can't stand?",
     intensity: "How strong should it be?",
     budget: "What's your budget tier?",
+    notes: "Any notes you love — or want to avoid?",
   };
-  const answers = { who: null, occasion: null, families: [], refName: null, refLike: null, refFamily: null, refPerfumeId: null, intensity: null, tier: null };
+  const answers = { who: null, occasion: null, families: [], refName: null, refLike: null, refFamily: null, refPerfumeId: null, intensity: null, tier: null, likedNotes: [], dislikedNotes: [] };
   let stepIndex = 0;
 
   function showView(name) {
@@ -130,7 +198,9 @@ if (typeof document !== "undefined") {
 
   function renderQuiz() {
     const step = QUIZ_STEPS[stepIndex];
-    $("#quiz-progress").textContent = `Question ${stepIndex + 1} of ${QUIZ_STEPS.length}`;
+    // The notes step is optional and advanced, so it is not counted among
+    // the six questions.
+    $("#quiz-progress").textContent = step === "notes" ? "Optional · Advanced" : `Question ${stepIndex + 1} of ${QUIZ_STEPS.length - 1}`;
     $("#quiz-question").textContent = STEP_TITLES[step];
     const box = $("#quiz-options");
     box.innerHTML = "";
@@ -216,6 +286,64 @@ if (typeof document !== "undefined") {
       for (const t of ["affordable", "mid", "premium"]) {
         box.appendChild(optionButton(TIER_LABELS[t], null, () => { answers.tier = t; next(); }, answers.tier === t));
       }
+    } else if (step === "notes") {
+      const hint = document.createElement("p");
+      hint.className = "hint";
+      hint.textContent = "Optional. A note can't be in both lists — picking it in one removes it from the other.";
+      box.appendChild(hint);
+      // One button per note in each group; both buttons for a note stay in
+      // sync so the two lists can never contradict each other.
+      const btns = new Map();
+      const paint = (key) => {
+        const pair = btns.get(key);
+        if (!pair) return;
+        pair.love.classList.toggle("selected", answers.likedNotes.includes(key));
+        pair.love.classList.toggle("dim", answers.dislikedNotes.includes(key));
+        pair.avoid.classList.toggle("avoid-selected", answers.dislikedNotes.includes(key));
+        pair.avoid.classList.toggle("dim", answers.likedNotes.includes(key));
+      };
+      const group = (label, key, other) => {
+        const g = document.createElement("div");
+        g.className = "note-group";
+        const h = document.createElement("p");
+        h.className = "filter-label";
+        h.textContent = label;
+        const row = document.createElement("div");
+        row.className = "chips";
+        for (const n of ALL_NOTES) {
+          const b = document.createElement("button");
+          b.className = "chip";
+          b.textContent = n.label;
+          b.onclick = () => {
+            const i = answers[key].indexOf(n.key);
+            if (i >= 0) answers[key].splice(i, 1);
+            else {
+              answers[key].push(n.key);
+              const j = answers[other].indexOf(n.key);
+              if (j >= 0) answers[other].splice(j, 1);
+            }
+            paint(n.key);
+          };
+          if (!btns.has(n.key)) btns.set(n.key, {});
+          btns.get(n.key)[key === "likedNotes" ? "love" : "avoid"] = b;
+          row.appendChild(b);
+        }
+        g.append(h, row);
+        return g;
+      };
+      box.appendChild(group("Notes you love", "likedNotes", "dislikedNotes"));
+      box.appendChild(group("Notes to avoid", "dislikedNotes", "likedNotes"));
+      for (const n of ALL_NOTES) paint(n.key);
+      const cont = document.createElement("button");
+      cont.className = "primary";
+      cont.textContent = "See my matches";
+      cont.onclick = next;
+      box.appendChild(cont);
+      const skip = document.createElement("button");
+      skip.className = "text-button";
+      skip.textContent = "Skip this step";
+      skip.onclick = () => { answers.likedNotes = []; answers.dislikedNotes = []; next(); };
+      box.appendChild(skip);
     }
   }
 
@@ -230,8 +358,13 @@ if (typeof document !== "undefined") {
     return `<div class="tags"><span>${WHO_LABELS[p.who]}</span><span>${FAMILY_LABELS[p.family]}</span><span>${OCCASION_LABELS[p.occasion]}</span><span>${INTENSITY_LABELS[p.intensity]}</span><span>${TIER_LABELS[p.tier]}</span></div>`;
   }
 
+  function notesHTML(p) {
+    if (!p.notes) return "";
+    return `<p class="notes"><span>Top:</span> ${p.notes.top.join(", ")}<br><span>Heart:</span> ${p.notes.heart.join(", ")}<br><span>Base:</span> ${p.notes.base.join(", ")}</p>`;
+  }
+
   function finishQuiz() {
-    const { top, dislikeApplied } = getResults(answers);
+    const { top, dislikeApplied, notesRelaxed } = getResults(answers);
     const box = $("#results-list");
     box.innerHTML = "";
     top.forEach((entry, i) => {
@@ -245,11 +378,18 @@ if (typeof document !== "undefined") {
         <h3>${entry.p.name}</h3>
         ${tagRow(entry.p)}
         <p class="desc">${entry.p.desc}</p>
+        ${notesHTML(entry.p)}
         <ul class="why">${whys}</ul>
         ${trade ? `<p class="tradeoff">${trade}</p>` : ""}
       `;
       box.appendChild(card);
     });
+    if (notesRelaxed && answers.dislikedNotes.length) {
+      const note = document.createElement("p");
+      note.className = "tradeoff";
+      note.textContent = "No perfumes avoided all your disliked notes, so these are the closest matches — perfumes with avoided notes rank lower.";
+      box.prepend(note);
+    }
     if (dislikeApplied) {
       const note = document.createElement("p");
       note.className = "tradeoff";
@@ -274,7 +414,7 @@ if (typeof document !== "undefined") {
     for (const p of list) {
       const card = document.createElement("article");
       card.className = "card";
-      card.innerHTML = `${photoHTML(p)}<h3>${p.name}</h3>${tagRow(p)}<p class="desc">${p.desc}</p>`;
+      card.innerHTML = `${photoHTML(p)}<h3>${p.name}</h3>${tagRow(p)}<p class="desc">${p.desc}</p>${notesHTML(p)}`;
       grid.appendChild(card);
     }
   }
@@ -324,6 +464,7 @@ if (typeof document !== "undefined") {
       answers.who = null; answers.occasion = null; answers.families = [];
       answers.refName = null; answers.refLike = null; answers.refFamily = null; answers.refPerfumeId = null;
       answers.intensity = null; answers.tier = null;
+      answers.likedNotes = []; answers.dislikedNotes = [];
       renderQuiz(); showView("quiz");
     };
     const browseFromResults = $("#browse-from-results");
@@ -332,5 +473,5 @@ if (typeof document !== "undefined") {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { resolveRefFamily, resolveRefPerfume, scorePerfume, getResults, whyLines, tradeoffLine };
+  module.exports = { resolveRefFamily, resolveRefPerfume, scorePerfume, getResults, whyLines, tradeoffLine, normNote, perfumeNoteKeys, ALL_NOTES, noteLabel };
 }

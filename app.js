@@ -80,6 +80,137 @@ function relatedNotes(key, shown) {
     .map(([k]) => k);
 }
 
+// Thumbnail photos for note chips, baked into the site (no runtime calls).
+// One sprite sheet (11x11 cells of 160px) keeps this to a single image
+// download; NOTE_SPRITE_POS maps each note key to its [column, row] cell.
+// Notes absent here get a neutral initial tile instead (synthetics, brand
+// terms, and generic accords have no honest real photo). Built from
+// images-opt/notes/*.webp; see images-opt/notes/CREDITS.md for photo credits.
+const NOTE_SPRITE = "images-opt/notes/sprite.webp";
+const NOTE_SPRITE_POS = {
+  agarwoodoud: [0, 0],
+  almond: [0, 1],
+  amber: [0, 2],
+  ambergris: [0, 3],
+  ambrette: [0, 4],
+  apple: [0, 5],
+  apricot: [0, 6],
+  artemisia: [0, 7],
+  basil: [0, 8],
+  benzoin: [0, 9],
+  bergamot: [0, 10],
+  birch: [1, 0],
+  blackcurrant: [1, 1],
+  blacktea: [1, 2],
+  bourbonvanilla: [1, 3],
+  bulgarianrose: [1, 4],
+  cacao: [1, 5],
+  cacaopod: [1, 6],
+  cannabis: [1, 7],
+  cardamom: [1, 8],
+  cashmerewood: [1, 9],
+  cedar: [1, 10],
+  cinnamon: [2, 0],
+  citron: [2, 1],
+  clarysage: [2, 2],
+  coffee: [2, 3],
+  coriander: [2, 4],
+  dates: [2, 5],
+  davana: [2, 6],
+  driedfruits: [2, 7],
+  driftwood: [2, 8],
+  elemi: [2, 9],
+  fig: [2, 10],
+  firresin: [3, 0],
+  fruitynotes: [3, 1],
+  galbanum: [3, 2],
+  ginger: [3, 3],
+  gourmandaccord: [3, 4],
+  grapefruit: [3, 5],
+  greennotes: [3, 6],
+  guaiacwood: [3, 7],
+  gurjanbalsam: [3, 8],
+  haitianvetiver: [3, 9],
+  heliotrope: [3, 10],
+  ice: [4, 0],
+  incense: [4, 1],
+  indonesianpatchoulileaf: [4, 2],
+  italianlemon: [4, 3],
+  jasmine: [4, 4],
+  jasminesambac: [4, 5],
+  juniper: [4, 6],
+  labdanum: [4, 7],
+  lavender: [4, 8],
+  leather: [4, 9],
+  lemon: [4, 10],
+  lily: [5, 0],
+  lilyofthevalley: [5, 1],
+  lime: [5, 2],
+  lotus: [5, 3],
+  magnolia: [5, 4],
+  mahogany: [5, 5],
+  mandarin: [5, 6],
+  mandarinorange: [5, 7],
+  mimosa: [5, 8],
+  mint: [5, 9],
+  moss: [5, 10],
+  musk: [6, 0],
+  myrrh: [6, 1],
+  neroli: [6, 2],
+  nutmeg: [6, 3],
+  oakmoss: [6, 4],
+  olibanum: [6, 5],
+  opoponax: [6, 6],
+  orange: [6, 7],
+  orangeblossom: [6, 8],
+  orchid: [6, 9],
+  orris: [6, 10],
+  orrisroot: [7, 0],
+  papaya: [7, 1],
+  patchouli: [7, 2],
+  peony: [7, 3],
+  pineapple: [7, 4],
+  pinkpepper: [7, 5],
+  plum: [7, 6],
+  pomegranate: [7, 7],
+  praline: [7, 8],
+  raspberry: [7, 9],
+  resins: [7, 10],
+  rooibostea: [8, 0],
+  rose: [8, 1],
+  saffron: [8, 2],
+  sage: [8, 3],
+  sandalwood: [8, 4],
+  seasalt: [8, 5],
+  seaweed: [8, 6],
+  sicilianbergamot: [8, 7],
+  spicynotes: [8, 8],
+  staranise: [8, 9],
+  suede: [8, 10],
+  sugar: [9, 0],
+  tangerine: [9, 1],
+  tearose: [9, 2],
+  thyme: [9, 3],
+  tobacco: [9, 4],
+  tobaccoblossom: [9, 5],
+  tobaccoleaf: [9, 6],
+  toffee: [9, 7],
+  tonka: [9, 8],
+  tropicalfruits: [9, 9],
+  tuberose: [9, 10],
+  turkishrose: [10, 0],
+  vanilla: [10, 1],
+  vetiver: [10, 2],
+  violet: [10, 3],
+  violetleaf: [10, 4],
+  whiteflowers: [10, 5],
+  whitemusk: [10, 6],
+  woodsynotes: [10, 7],
+  woodynotes: [10, 8],
+  ylangylang: [10, 9],
+  yuzu: [10, 10],
+};
+
 function resolveRefFamily(input) {
   if (!input) return null;
   const q = input.toLowerCase().trim();
@@ -351,10 +482,27 @@ if (typeof document !== "undefined") {
         pair.avoid.classList.toggle("dim", answers.likedNotes.includes(key));
       };
       const rows = {};
+      // Thumbnail for a chip: the note's photo (from the sprite sheet)
+      // where one exists, else a neutral tile with the note's initial so
+      // every chip stays aligned.
+      const chipThumb = (n) => {
+        const p = NOTE_SPRITE_POS[n.key];
+        if (p) {
+          const s = document.createElement("span");
+          s.className = "chip-thumb";
+          s.style.backgroundImage = `url(${NOTE_SPRITE})`;
+          s.style.backgroundPosition = `-${p[0] * 20}px -${p[1] * 20}px`;
+          return s;
+        }
+        const tile = document.createElement("span");
+        tile.className = "chip-tile";
+        tile.textContent = n.label.charAt(0);
+        return tile;
+      };
       const addChip = (n, key, other, row) => {
         const b = document.createElement("button");
-        b.className = "chip";
-        b.textContent = n.label;
+        b.className = "chip has-thumb";
+        b.append(chipThumb(n), document.createTextNode(n.label));
         b.onclick = () => {
           const i = answers[key].indexOf(n.key);
           if (i >= 0) {
@@ -558,5 +706,5 @@ if (typeof document !== "undefined") {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { resolveRefFamily, resolveRefPerfume, scorePerfume, getResults, whyLines, tradeoffLine, normNote, perfumeNoteKeys, ALL_NOTES, noteLabel, NOTE_FREQ, initialVisibleNotes, relatedNotes };
+  module.exports = { resolveRefFamily, resolveRefPerfume, scorePerfume, getResults, whyLines, tradeoffLine, normNote, perfumeNoteKeys, ALL_NOTES, noteLabel, NOTE_FREQ, initialVisibleNotes, relatedNotes, NOTE_SPRITE, NOTE_SPRITE_POS };
 }
